@@ -10,7 +10,7 @@
     "test": "tape test/*.test.js | tap-spec",
     "devStart": "nodemon src/server.js",
     "start": "node src/server.js",
-    "coverage": "./node_modules/.bin/istanbul cover tape ./tests/*.js"
+    "coverage": "./node_modules/.bin/istanbul cover tape ./test/*.js"
   },
   "repository": {
     "type": "git",
