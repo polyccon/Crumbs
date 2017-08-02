@@ -10,21 +10,18 @@
   <body>
     <h1>CRUMBS!</h1>
     <a href="./index.html">Browse biscuits</a>
-    <h2>Add Biscuit</h2>
-    <form action="/add-biscuit" method="post">
-      <label>Brand:
-        <input type="text">
-      </label>
-      <label>Name:
+    <h2>Add Feedback</h2>
+    <form action="/add-feedback" method="post">
+      <label>Biscuit Name:
         <input type="text" name="name">
       </label>
-      <label>Calories:
-        <input type="number" name="calories">
+      <label>Rating:
+        <input type="number" name="rating">
       </label>
-      <label>Chocolate?
-        <input type="checkbox" name="chocolate">
+      <label>Review:
+        <textarea name="review"></textarea>
       </label>
-      <button type="submit">Add</button>
+      <button type="submit">Submit</button>
       </label>
     </form>
   </body>
