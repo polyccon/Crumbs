@@ -1,7 +1,7 @@
-# CRUMBS
+# CRUMBS [![Build Status](https://travis-ci.org/polyccon/Crumbs.svg?branch=master)](https://travis-ci.org/polyccon/Crumbs)
 
 ## WHY (describing the purpose)
-Bart is a biscuit fiend. He constantly craves biscuits of all varieties; and lives purely for the joyous crunch of Anzac cookies(his favorite). He has always wondered if others also share his powerful lust for baked treats; and wishes to find other like minded biscuit fanciers to compare, rate and review the cornucopia that is the modern biscuit market. He wishes to enflame the passions of others through an active communicative community sharing advice, pictures and, of course, biscuits.
+Bart is a biscuit fiend. He constantly craves biscuits of all varieties; and lives purely for the joyous crunch of Anzac cookies (his favorite). He has always wondered if others also share his powerful lust for baked treats; and wishes to find other like minded biscuit fanciers to compare, rate and review the cornucopia that is the modern biscuit market. He wishes to enflame the passions of others through an active communicative community sharing advice, pictures and, of course, biscuits.
 
 
 ## WHAT (describing your site)
