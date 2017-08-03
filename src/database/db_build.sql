@@ -20,4 +20,3 @@ BEGIN;
     );
 
 COMMIT;
-    
