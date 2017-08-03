@@ -1,0 +1,12 @@
+/* From CSS tricks */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.5rem;
+}
