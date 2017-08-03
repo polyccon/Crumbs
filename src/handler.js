@@ -51,7 +51,6 @@ const handlers = {
         res.end(file);
       }
     });
-
   },
   queryGetData: (req, res) => {
     getData(dbConnection, (err, response) => {
