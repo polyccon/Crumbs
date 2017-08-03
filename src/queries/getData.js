@@ -1,11 +1,11 @@
-const dbConnection = require('../database/db_connection.js');
+const dbConnection = require('../database/db_connection');
 
-const getData = (cb) => {
-  dbConnection.query(`SELECT * FROM biscuits`, (err, res) => {
+const getData = (callback) => {
+  dbConnection.query(`SELECT * FROM biscuits ORDER BY id DESC`, (err, res) => {
     if (err) {
-      cb(err);
+      callback(err);
     } else {
-      cb(null, res.rows);
+      callback(null, res.rows);
     }
   });
 };
