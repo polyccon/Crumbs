@@ -19,8 +19,34 @@ tape('initialising tape', (t) => {
 });
 
 tape('Testing getData.js', (t) => {
-  t.pass();
-  t.end();
+  resetDatabase();
+  const expected = [{
+    id: 3,
+    name: 'imaginery',
+    brand: 'james',
+    chocolate: true,
+    calories: null,
+  },
+  {
+    id: 2,
+    name: 'oreo',
+    brand: 'unknown',
+    chocolate: true,
+    calories: 300,
+  },
+  {
+    id: 1,
+    name: 'digestive',
+    brand: 'mcvities',
+    chocolate: false,
+    calories: 100,
+  },
+  ];
+  getData(dbConnection, (err, res) => {
+    if (err) console.log(err);
+    t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
+    t.end();
+  });
 });
 
 tape('check if postData adds a new row to database', (t) => {
