@@ -3,6 +3,7 @@ const dbConnection = require('./database-test/db_connection.test');
 const dbBuild = require('./database-test/db_build.test');
 const tape = require('tape');
 const getData = require('../src/queries/getData');
+const postData = require('../src/queries/postData');
 
 const sql = fs.readFileSync(`${__dirname}/database-test/db_build.test.sql`).toString();
 
@@ -45,5 +46,25 @@ tape('Testing getData.js', (t) => {
     if (err) console.log(err);
     t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
     t.end();
+  });
+});
+
+tape('check if postData adds a new entry to database', (t) => {
+  resetDatabase();
+  postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
+    if (err) console.log(err);
+  });
+
+  dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
+    if (err);
+    const expected = {
+      id: 4,
+      name: 'Abbracci',
+      brand: 'Mulino Bianco',
+      chocolate: true,
+      calories: 500 };
+      const actual = res.rows[3];
+      t.deepEquals(expected, actual, 'both rows should have same values');
+      t.end();
   });
 });
