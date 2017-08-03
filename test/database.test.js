@@ -27,20 +27,20 @@ tape('Testing getData.js', (t) => {
     chocolate: true,
     calories: null,
   },
-  {
-    id: 2,
-    name: 'oreo',
-    brand: 'unknown',
-    chocolate: true,
-    calories: 300,
-  },
-  {
-    id: 1,
-    name: 'digestive',
-    brand: 'mcvities',
-    chocolate: false,
-    calories: 100,
-  },
+    {
+      id: 2,
+      name: 'oreo',
+      brand: 'unknown',
+      chocolate: true,
+      calories: 300,
+    },
+    {
+      id: 1,
+      name: 'digestive',
+      brand: 'mcvities',
+      chocolate: false,
+      calories: 100,
+    },
   ];
   getData(dbConnection, (err, res) => {
     if (err) console.log(err);
@@ -63,8 +63,8 @@ tape('check if postData adds a new entry to database', (t) => {
       brand: 'Mulino Bianco',
       chocolate: true,
       calories: 500 };
-      const actual = res.rows[3];
-      t.deepEquals(expected, actual, 'both rows should have same values');
-      t.end();
+    const actual = res.rows[3];
+    t.deepEquals(expected, actual, 'both rows should have same values');
+    t.end();
   });
 });
