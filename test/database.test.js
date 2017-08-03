@@ -7,19 +7,13 @@ const postData = require('../src/queries/postData');
 
 const sql = fs.readFileSync(`${__dirname}/database-test/db_build.test.sql`).toString();
 
-const resetDatabase = () => {
-  dbConnection.query(sql, (err) => {
-    if (err) throw err;
-  });
-};
-
 tape('initialising tape', (t) => {
   t.equals(1, 1, '1 should equal 1 :)');
   t.end();
 });
 
 tape('Testing getData.js', (t) => {
-  resetDatabase();
+  dbBuild();
   const expected = [{
     id: 3,
     name: 'imaginery',
@@ -50,21 +44,21 @@ tape('Testing getData.js', (t) => {
 });
 
 tape('check if postData adds a new entry to database', (t) => {
-  resetDatabase();
+  dbBuild();
   postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
     if (err) console.log(err);
-  });
-
-  dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
-    if (err);
-    const expected = {
-      id: 4,
-      name: 'Abbracci',
-      brand: 'Mulino Bianco',
-      chocolate: true,
-      calories: 500 };
-    const actual = res.rows[3];
-    t.deepEquals(expected, actual, 'both rows should have same values');
-    t.end();
+    dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
+      if (err);
+      const expected = {
+        id: 4,
+        name: 'Abbracci',
+        brand: 'Mulino Bianco',
+        chocolate: true,
+        calories: 500 };
+      const actual = res.rows[3];
+      t.deepEquals(expected, actual, 'both rows should have same values');
+      t.end();
+      dbConnection.end();
+    });
   });
 });
