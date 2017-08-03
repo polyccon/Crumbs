@@ -4,7 +4,6 @@ const dbConnection = require('./db_connection.test');
 
 const sql = fs.readFileSync(`${__dirname}/db_build.test.sql`).toString();
 
-dbConnection.query(sql, (err, res) => {
+dbConnection.query(sql, (err) => {
   if (err) throw err;
-  console.log('Table has been created with result: ', res);
 });
