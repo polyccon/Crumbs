@@ -41,6 +41,7 @@ tape('Testing getData.js', (t) => {
       if (err) console.log(err);
       t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
       t.end();
+      dbConnection.end();
     });
   })
 });
