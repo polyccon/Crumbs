@@ -51,7 +51,6 @@ const handlers = {
         res.end(file);
       }
     });
-
   },
   queryGetData: (req, res) => {
     getData(dbConnection, (err, response) => {
@@ -59,6 +58,7 @@ const handlers = {
       res.writeHead(200, {
         "Content-Type": "application/json"
       });
+
       res.end(JSON.stringify(response));
     });
   },
