@@ -13,7 +13,7 @@ tape('initialising tape', (t) => {
 });
 
 tape('Testing getData.js', (t) => {
-  dbBuild();
+  //dbBuild();
   const expected = [{
     id: 3,
     name: 'imaginery',
@@ -44,7 +44,7 @@ tape('Testing getData.js', (t) => {
 });
 
 tape('check if postData adds a new entry to database', (t) => {
-  dbBuild();
+  //dbBuild();
   postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
     if (err) console.log(err);
     dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
