@@ -36,29 +36,33 @@ tape('Testing getData.js', (t) => {
       calories: 100,
     },
   ];
-  getData(dbConnection, (err, res) => {
-    if (err) console.log(err);
-    t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
-    t.end();
-  });
+  dbBuild(() => {
+    getData(dbConnection, (err, res) => {
+      if (err) console.log(err);
+      t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
+      t.end();
+    });
+  })
 });
 
 tape('check if postData adds a new entry to database', (t) => {
   //dbBuild();
-  postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
-    if (err) console.log(err);
-    dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
-      if (err);
-      const expected = {
-        id: 4,
-        name: 'Abbracci',
-        brand: 'Mulino Bianco',
-        chocolate: true,
-        calories: 500 };
-      const actual = res.rows[3];
-      t.deepEquals(expected, actual, 'both rows should have same values');
-      t.end();
-      dbConnection.end();
+  dbBuild(() => {
+    postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
+      if (err) console.log(err);
+      dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
+        if (err);
+        const expected = {
+          id: 4,
+          name: 'Abbracci',
+          brand: 'Mulino Bianco',
+          chocolate: true,
+          calories: 500 };
+        const actual = res.rows[3];
+        t.deepEquals(expected, actual, 'both rows should have same values');
+        t.end();
+        dbConnection.end();
+      });
     });
-  });
+  })
 });
