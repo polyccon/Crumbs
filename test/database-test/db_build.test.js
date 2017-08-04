@@ -6,7 +6,9 @@ const sql = fs.readFileSync(`${__dirname}/db_build.test.sql`).toString();
 
 const dbBuild = () => {
   dbConnection.query(sql, (err) => {
-    if (err) throw err;
+    if (err) {
+      return console.log(err);
+    }
   });
 };
 
