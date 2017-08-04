@@ -41,12 +41,12 @@ tape('Testing getData.js', (t) => {
       if (err) console.log(err);
       t.deepEquals(res, expected, 'getData should give us all rows in reverse order.');
       t.end();
-      dbConnection.end();
     });
   })
 });
 
 tape('check if postData adds a new entry to database', (t) => {
+  //dbBuild();
   dbBuild(() => {
     postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
       if (err) console.log(err);
