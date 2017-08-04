@@ -5,6 +5,7 @@ const postData = require('./queries/postData');
 const getData = require('./queries/getData');
 const url = require("url");
 const querystring = require('querystring');
+const inputValidation = require('./inputValidation');
 
 const contentTypes = {
   '.html': 'text/html',
@@ -72,6 +73,12 @@ const handlers = {
     req.on('end', () => {
       const queries = querystring.parse(body.toString());
 
+    if (!(inputValidation.calorieValidation(queries.calories)).isValid || !(inputValidation.textValidation(queries.brand)).isValid || !(inputValidation.textValidation(queries.name)).isValid){
+      res.writeHead(403,{"Content-type": "text/html"
+    });
+    res.end("<h1>Invalid input.</h1>");
+  }
+  else{
       postData(queries.brand, queries.name, queries.calories, queries.chocolate, dbConnection, (err) => {
         if (err) throw err;
         res.writeHead(303, {
@@ -79,6 +86,7 @@ const handlers = {
         });
         res.end();
       });
+    }
     })
   },
 
