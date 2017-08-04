@@ -53,18 +53,18 @@ tape('check if postData adds a new entry to database', (t) => {
   resetDatabase();
   postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
     if (err) console.log(err);
-  });
-
-  dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
-    if (err);
-    const expected = {
-      id: 4,
-      name: 'Abbracci',
-      brand: 'Mulino Bianco',
-      chocolate: true,
-      calories: 500 };
-      const actual = res.rows[3];
-      t.deepEquals(expected, actual, 'both rows should have same values');
-      t.end();
+    dbConnection.query('SELECT * FROM biscuits;', (err, res) => {
+      if (err);
+      const expected = {
+        id: 4,
+        name: 'Abbracci',
+        brand: 'Mulino Bianco',
+        chocolate: true,
+        calories: 500 };
+        const actual = res.rows[3];
+        t.deepEquals(expected, actual, 'both rows should have same values');
+        dbConnection.end();
+        t.end();
+    });
   });
 });
