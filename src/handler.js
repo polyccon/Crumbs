@@ -53,7 +53,7 @@ const handlers = {
       }
     });
   },
-  queryGetData: (req, res) => {
+  getBiscuits: (req, res) => {
     getData(dbConnection, (err, response) => {
       if (err) throw err;
       res.writeHead(200, {
@@ -63,7 +63,7 @@ const handlers = {
       res.end(JSON.stringify(response));
     });
   },
-  queryPostData: (req, res) => {
+   postBiscuit: (req, res) => {
 
     let body = '';
     req.on('data', (chunk) => {

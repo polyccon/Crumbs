@@ -1,6 +1,6 @@
 (function () {
   var button = document.getElementById('js-submit_button');
-  httpRequest('/get', renderDom);
+  httpRequest('/biscuits', renderDom);
 
 
   button.addEventListener('click', function (e) {

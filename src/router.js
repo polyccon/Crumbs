@@ -4,13 +4,13 @@ const url = require('url');
 const router = (req, res) => {
   const routes = {
     '/': handlers.home,
-    '/get': handlers.queryGetData,
-    '/post': handlers.queryPostData,
+    '/biscuits': handlers.getBiscuits,
+    '/add-biscuit': handlers.addBiscuit,
     '/style.css': handlers.assets,
     '/main.css': handlers.assets,
     '/index.js': handlers.assets,
     '/dom.js': handlers.assets,
-    '/add-biscuit': handlers.addBiscuit,
+    '/post-biscuit': handlers.postBiscuit,
   };
 
   const endpoint = url.parse(req.url).pathname;
