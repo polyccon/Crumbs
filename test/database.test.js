@@ -46,7 +46,6 @@ tape('Testing getData.js', (t) => {
 });
 
 tape('check if postData adds a new entry to database', (t) => {
-  //dbBuild();
   dbBuild(() => {
     postData('Mulino Bianco', 'Abbracci', 500, true, dbConnection, (err, res) => {
       if (err) console.log(err);

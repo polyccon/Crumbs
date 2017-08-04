@@ -1,13 +1,13 @@
 (function () {
   var button = document.getElementById('js-submit_button');
-  httpRequest('/', renderDom);
+  httpRequest('/get', renderDom);
 
 
   button.addEventListener('click', function (e) {
     e.preventDefault();
 
-    var url = '/search?' + 'chocolate=' + genre + '&rating=' + year;
-    httpRequest(url, renderDom);
+    // var url = '/search?' + 'chocolate=' + genre + '&rating=' + year;
+    // httpRequest(url, renderDom);
   });
 
   // make the api call to server

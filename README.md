@@ -30,7 +30,7 @@ Our schema:
 
 
 #### Drawing out our user experience
-
+I discovered during the code review that if you type into any of our add biscuits fields an SQL query it will crash the application. I think this drove home to us the importance of input validation.
 
 #### Separation of Concerns
 

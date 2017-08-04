@@ -7,6 +7,7 @@ const router = (req, res) => {
     '/get': handlers.queryGetData,
     '/post': handlers.queryPostData,
     '/style.css': handlers.assets,
+    '/main.css': handlers.assets,
     '/index.js': handlers.assets,
     '/dom.js': handlers.assets,
     '/add-biscuit': handlers.addBiscuit,

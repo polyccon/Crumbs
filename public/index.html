@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>CRUMBS!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-  <link href="main.css" rel="stylesheet">
-  <meta charset="UTF-8">
-</head>
+  <head>
+    <title>CRUMBS!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+    <link href="main.css" type = "text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <section class ="main">
+    <h1>CRUMBS!</h1>
+    <a href="./add-biscuit">Add a new biscuit</a>
+    <section class="biscuits">
+      <h2>Browse Biscuits</h2>
+      <form>
+        <label>Chocolate?
 
-<body>
-  <h1>CRUMBS!</h1>
-  <a href="./add-biscuit.html">Add a new biscuit</a>
-  <section class="biscuits">
-    <h2>Browse Biscuits</h2>
-    <form>
-      <label>Chocolate?
 
           <input type="checkbox" name="chocolate">
         </label>
@@ -24,11 +25,11 @@
         </label>
       <button type="submit" id="js-submit_button">Filter?</button>
     </form>
-
-    <div class="biscuit__container">
+    <div class="bitofspace"> </div>
+    <div class="biscuit__container" class  ="biscuit">
       <!-- by default this should show 4 top rated biscuits - their names and
           brand? but changes which are shown based on filters in above form -->
-      <table id="biscuitTable">
+      <table id="biscuitTable" class="biscuitTable">
         <tr>
           <th>Name</th>
           <th>Brand</th>
@@ -36,8 +37,11 @@
           <th>Chocolate</th>
         </tr>
       </table>
+
     </div>
   </section>
+</section>
+  <script src = "/dom.js"></script>
 </body>
 
 </html>

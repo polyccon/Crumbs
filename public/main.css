@@ -1,12 +1,41 @@
 /* From CSS tricks */
 html {
   box-sizing: border-box;
+
 }
 *, *:before, *:after {
   box-sizing: inherit;
+
 }
 
 body {
     font-family: 'Cabin Sketch', cursive;
     font-size: 1.5rem;
+
+    text-align: center;
+    background-image: url("http://cdn.jamieoliver.com/news-and-features/features/wp-content/uploads/sites/2/2016/04/BEE-BERRIE-DIY-DIGESTIVE-BISCUITS_22782_preview.jpg");
+}
+
+.main{
+    background-color: #FFDAB9;
+    margin: 200px;
+      padding: 100px;
+}
+.bitofspace{
+padding-bottom: 120px;
+}
+.biscuitTable{
+  margin: auto;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th {
+  border: 3px #20c5b5 solid;
+  background-color: yellow;
+}
+th{
+    font-family: 'Cabin Sketch', cursive;
 }
